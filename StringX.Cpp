@@ -10,6 +10,7 @@ class StringLibrary
     void toUpperCaseX(char[]);
     void toLowerCaseX(char[]);
     void toggleCaseX(char[]);
+    void strcatX(char [],char[]);
 };
 
 int  StringLibrary:: strlenX(char *str)
@@ -93,19 +94,55 @@ void StringLibrary:: toggleCaseX(char *str)
     }
 
 }
-void StringLibrary:: strrevX(char ch[])
+void StringLibrary:: strrevX(char *str)
 {
-    
+    char *Start=str;
+    char *End= str;
+    char temp;
+    while(*End != '\0')
+    {
+        *End++;
+    }
+    *End--;
+    while (Start < End )
+    {
+        temp= *Start;
+        *Start=*End;
+        *End= temp;
 
+        End--;
+        Start++;
+    }
+
+}
+
+void StringLibrary::strcatX(char *src,char *dest)
+{
+   while(*dest !='\0')
+    {
+        dest++;
+    }
+    while (*src !='0')
+    {
+        *dest=*src;
+        dest++;
+        src++;
+    }
+
+    *dest='\0';
+  
 }
 int main()
 {   
     char Arr1[100];
+    char Arr2[100];
     cout<<"Enter the string:"<<endl;
     cin>>Arr1;
+    cout<<"Enter the string:"<<endl;
+    cin>>Arr2;
 
     StringLibrary sl;
-    sl.toggleCaseX(Arr1);
+    sl.strcatX(Arr2,Arr1);
     cout<<Arr1;
     
     return 0;
