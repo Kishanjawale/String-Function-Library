@@ -9,7 +9,7 @@ class StringLibrary
     void strrevX(char []);
     void toUpperCaseX(char[]);
     void toLowerCaseX(char[]);
-    void toggleCaseX(char ch[]);
+    void toggleCaseX(char[]);
 };
 
 int  StringLibrary:: strlenX(char *str)
@@ -76,8 +76,21 @@ void StringLibrary:: toLowerCaseX(char *str)
     }
 
 }
-void StringLibrary:: toggleCaseX(char ch[])
+void StringLibrary:: toggleCaseX(char *str)
 {
+    cout<<"After Toggeling the Case:"<<endl;
+    while(*str != '\0')
+    {
+        if(*str >='a' && *str <='z' )
+        {
+            *str=*str-32;
+        }
+        else if(*str >='A' && *str <='Z' )
+        {
+            *str=*str+32;
+        }
+        *str++;
+    }
 
 }
 void StringLibrary:: strrevX(char ch[])
@@ -88,13 +101,11 @@ void StringLibrary:: strrevX(char ch[])
 int main()
 {   
     char Arr1[100];
-    char Arr2[100];
-    bool  bRet=false;
     cout<<"Enter the string:"<<endl;
     cin>>Arr1;
 
     StringLibrary sl;
-    sl.toLowerCaseX(Arr1);
+    sl.toggleCaseX(Arr1);
     cout<<Arr1;
     
     return 0;
