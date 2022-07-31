@@ -1,6 +1,15 @@
 #include<iostream>
 using namespace std;
 
+/*
+**************************************************************
+// class Name         :     StringLibrary
+// Decription         :     Contains the functions for string manipulation
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 class StringLibrary
 {
     public :
@@ -13,6 +22,17 @@ class StringLibrary
     void strcatX(char [],char[]);
 };
 
+/*
+**************************************************************
+// Function Name     :      strlenX
+// Input             :      char[]
+// Output            :      integer
+// Decription         :     This function return the length of the string
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 int  StringLibrary:: strlenX(char *str)
 {
     int iCnt=0;
@@ -23,6 +43,18 @@ int  StringLibrary:: strlenX(char *str)
     }
     return iCnt;
 }
+
+/*
+**************************************************************
+// Function Name     :      strcmpX
+// Input             :      char[],char[]
+// Output            :      bool
+// Decription         :     This function Compare 2 strings
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 bool StringLibrary::strcmpX(char *str1,char *str2)
 {   
     int iCnt=0;
@@ -52,6 +84,17 @@ bool StringLibrary::strcmpX(char *str1,char *str2)
     }
 }
 
+/*
+**************************************************************
+// Function Name     :      toUpperCaseX[]
+// Input             :      char[]
+// Output            :      None
+// Decription         :     This function convert the string into uppercase
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 void StringLibrary:: toUpperCaseX(char *str)
 {
     cout<<"After Converting to UpperCase:"<<endl;
@@ -64,6 +107,18 @@ void StringLibrary:: toUpperCaseX(char *str)
         *str++;
     }
 }
+
+/*
+**************************************************************
+// Function Name     :      toLowerCaseX
+// Input             :      char[]
+// Output            :      None
+// Decription         :     this function convert the string into lowercase
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 void StringLibrary:: toLowerCaseX(char *str)
 {
     cout<<"After Converting to Lowercase:"<<endl;
@@ -77,6 +132,18 @@ void StringLibrary:: toLowerCaseX(char *str)
     }
 
 }
+
+/*
+**************************************************************
+// Function Name     :      toggleCaseX
+// Input             :      char[]
+// Output            :      None
+// Decription         :     This function toggle the case of every letter in string
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 void StringLibrary:: toggleCaseX(char *str)
 {
     cout<<"After Toggeling the Case:"<<endl;
@@ -92,8 +159,19 @@ void StringLibrary:: toggleCaseX(char *str)
         }
         *str++;
     }
-
 }
+
+/*
+**************************************************************
+// Function Name     :      strrevX
+// Input             :      char[]
+// Output            :      None
+// Decription         :     This function reverse the string
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
+
 void StringLibrary:: strrevX(char *str)
 {
     char *Start=str;
@@ -113,8 +191,18 @@ void StringLibrary:: strrevX(char *str)
         End--;
         Start++;
     }
-
 }
+
+/*
+**************************************************************
+// Function Name     :      strcatX
+// Input             :      char[],char[]
+// Output            :      None
+// Decription         :     This function Concatinate 2 strings
+// Author             :     Kishan Vivek Jawale
+// Date               :     6/7/2022   
+**************************************************************
+*/
 
 void StringLibrary::strcatX(char *src,char *dest)
 {
@@ -130,8 +218,19 @@ void StringLibrary::strcatX(char *src,char *dest)
     }
 
     *dest='\0';
-  
 }
+
+/*
+**************************************************************
+// Function Name     :      main
+// Input             :      None
+// Output            :      None
+// Decription         :     Entry Point Function
+// Author             :     Kishan Vivek Jawale
+// Date               :     31/7/2022   
+**************************************************************
+*/
+
 int main()
 {   
     char Arr1[100];
@@ -140,6 +239,10 @@ int main()
     cin>>Arr1;
     cout<<"Enter the string:"<<endl;
     cin>>Arr2;
-    StringLibrary cl; 
+
+    StringLibrary sl;
+    sl.strcatX(Arr2,Arr1);
+    cout<<Arr1;
+    
     return 0;
 }
