@@ -140,10 +140,6 @@ int main()
     cin>>Arr1;
     cout<<"Enter the string:"<<endl;
     cin>>Arr2;
-
-    StringLibrary sl;
-    sl.strcatX(Arr2,Arr1);
-    cout<<Arr1;
-    
+    StringLibrary cl; 
     return 0;
 }
